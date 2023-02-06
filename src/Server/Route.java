@@ -9,32 +9,21 @@ public class Route {
     private String html;
 
     public Route(String file){
-
         if (("/"+file.substring(0, file.indexOf("."))).strip().contains("index")){
             this.endpoint = "/";
         }else{
             this.endpoint = "/"+file.substring(0, file.indexOf(".")).strip();
         }
-        
         this.html = readFile("src/Pages/"+file);
-        
-        
     }
-
     public String getEndpoint(){
         return this.endpoint;
     }
-
     public String getHtml(){
         return this.html;
     }
-
-
-
-
     public static String readFile(String fileSrc){
         StringBuilder contentBuilder = new StringBuilder();
-       
         try{
             BufferedReader in = new BufferedReader(new FileReader(fileSrc));
             String str;
