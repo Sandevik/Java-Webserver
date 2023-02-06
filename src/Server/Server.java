@@ -15,7 +15,7 @@ public class Server{
     String address = "localhost";
     InetAddress addr;
     ServerSocket serverSocket;
-    ArrayList<Route> routes = new ArrayList<>();
+    ArrayList<Route> routes = new ArrayList<Route>();
 
     public Server(String address, int port){
         this.port = port;
@@ -49,7 +49,7 @@ public class Server{
                 }
             }
             requestHeaders.setMethod(responseList.get(0).strip());
-            requestHeaders.setDestination(responseList.get(1).strip());    
+            requestHeaders.setDestination(responseList.get(1).strip());  
             System.out.println("Request to: "+requestHeaders.getDestination());
 
             OutputStream clientOut = clientSocket.getOutputStream();
